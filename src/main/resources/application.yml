@@ -1,0 +1,45 @@
+#然而在yml配置文件中只需要---在一个配置文件中就可以搞定
+server:
+  port: 8082
+spring:
+  profiles:
+    active: dev
+---
+server:
+  port: 8083
+spring:
+  profiles: pro
+---
+server:
+  port: 8084
+spring:
+#  指定属于哪一个环境
+  profiles: dev
+
+#server:
+#  port: 8082
+#  path: /hello
+#
+#
+#person:
+#    lastName: li
+#    age: 20
+#    boss: false
+#    birth: 2019/7/29
+#    maps:
+#      k1: v1
+#      k2: v2
+#    lists:
+#      - lisi
+#      - zhaosi
+#    dog:
+#      name: 小狗
+#      age: 2
+###关闭缓存，即时刷新
+###spring.freemaker.cashe=false
+#spring:
+#  thymeleaf:
+#    cache: false
+#  freemarker:
+#    cache: false
+##  spring.thymeleaf.cache=true

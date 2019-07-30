@@ -1,0 +1,38 @@
+这里如果出现编码问题记得setting-file encoding 进行设置
+
+
+1.配置文件中可以使用随机数
+2.可以使用本属性配置之前已经配置好的属性值
+#person.lastName=lxd${random.uuid}
+person.age=${random.int}
+person.boss=false
+person.birth=2019/7/29
+person.maps.k1=v1
+person.maps.k2=v2
+person.lists=lisi,zhaosi
+person.dog.name=${person.lastName}_小狗------前面没有person.lastName就会报错
+person.dog.age=2
+
+
+person.lastName=lxd${random.uuid}
+person.age=${random.int}
+person.boss=false
+person.birth=2019/7/29
+person.maps.k1=v1
+person.maps.k2=v2
+person.lists=lisi,zhaosi
+person.dog.name=${person.hello}_小狗-----这里person没有这个属性不会报错后面再加：hello就相当于给其hell赋值hello
+person.dog.age=2
+
+
+激活指定的profile：
+        1.可以在yml配置文件中指定spring.profiles.active=dev
+
+        2.命令行：
+           先打包 然后 java -jar spring-boot-02-config。。。。（jar包名） --spring.profiles.active=dev
+
+           （在运行标识里面选择Edit Configuration 进行配置）
+           可以直接在测试的时候，配置传入命令行参数
+        3.虚拟机参数：
+            -Dspring.profiles.active=dev
+
